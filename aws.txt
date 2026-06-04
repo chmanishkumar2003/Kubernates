@@ -1,0 +1,22 @@
+aws configure
+aws_access_key_id = AIDAWG6QYRO3H42RYMNMJ
+aws_secret_access_key = oNFNdSWlySLL1pz+RMoI+G6wHYEmB/2dhDhoaag0
+
+Verify
+aws sts get-caller-identity
+
+#creating cluster
+eksctl create cluster \
+  --name my-cluster \
+  --region us-east-1 \
+  --nodegroup-name standard-workers \
+  --node-type t3.medium \
+  --nodes 1 \
+  --nodes-min 1 \
+  --nodes-max 3 \
+  --managed
+
+Verify the cluster
+kubectl get nodes
+
+nano deployhttpd1.yml
