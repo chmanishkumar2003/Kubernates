@@ -1,3 +1,15 @@
+curl --silent --location \
+  "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" \
+  | tar xz -C /tmp
+
+# Move to PATH
+sudo mv /tmp/eksctl /usr/local/bin
+
+# Verify
+eksctl version
+
+
+
 aws configure
 aws_access_key_id = AIDAWG6QYRO3H42RYMNMJ
 aws_secret_access_key = oNFNdSWlySLL1pz+RMoI+G6wHYEmB/2dhDhoaag0
